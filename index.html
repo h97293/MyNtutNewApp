@@ -1,119 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en-us">
+ 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>大大安安想去哪？</title>
-
-
-	<script type="text/javascript" charset="utf-8" src="cordova.js"></script> <script type="text/javascript" charset="utf-8" src="main.js"></script> <script type="text/javascript" charset="utf-8">
-	// Wait for Cordova to load
-	//
-	document.addEventListener("deviceready", onDeviceReady, false);
-	// Cordova is ready
-	//
-	function onDeviceReady() {
-	playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3"); }
-	// Audio player
-	//
-	var my_media = null; var mediaTimer = null;
-	// Play audio
-	//
-	function playAudio(src) {
-	// Create Media object from src
-	my_media = new Media(src, onSuccess, onError);
-	// Play audio my_media.play();
-	// Update my_media position every second if (mediaTimer == null) {
-	mediaTimer = setInterval(function() { // get my_media position my_media.getCurrentPosition(
-	// success callback function(position) {
-	if (position > -1) {
-	setAudioPosition((position) + " sec"); }
-	},
-	// error callback function(e) {
-	console.log("Error getting pos=" + e);
-	setAudioPosition("Error: " + e); }
-	);
-	}, 1000);
-	} }
-	// Pause audio
-	//
-	function pauseAudio() {
-	if (my_media) {
-	my_media.pause(); }
-	}
-	// Stop audio
-	//
-	function stopAudio() {
-	if (my_media) {
-	my_media.stop(); }
-	clearInterval(mediaTimer);
-	mediaTimer = null; }
-	// onSuccess Callback //
-	function onSuccess() {
-	console.log("playAudio():Audio Success"); }
-	// onError Callback
-	//
-	function onError(error) {
-	alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-	}
-	// Set audio position
-	//
-	function setAudioPosition(position) {
-	document.getElementById('audio_position').innerHTML = position; }
-	</script> 
-
-
-<style type="text/css">
-body {
-	background-image: url();
-	background-repeat: repeat;
-	
+<meta charset="utf-8">
+<title>dio</title>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+<script type="text/javascript" charset="utf-8">
+<script src="prefixfree.min.js"></script>
+ 
+<style>
+#mainContent {
+    background-color: #FFFF77;
+    border-radius: 4px;
+    padding: 10px;
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
 }
-html, body , .outer, .inner {
-    height:100%;
-    width:100%;
-    margin:0;
-} 
+.cloud {
+    position: absolute;
+}
+#bigcloud {
+    animation: bobble 2s infinite;
+    margin-left: -100px;
+    margin-top: -120px;
+}
+#smallcloud {
+    animation: bobble 4s infinite;
+    margin-top: -70px;
+    margin-left: -30px;
+}
+@keyframes bobble {
+    0% {
+        transform: translate3d(50px, 40px, 0px);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: translate3d(50px, 50px, 20px);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: translate3d(50px, 40px, 100px);
+    }
+}
 </style>
 </head>
-
+ 
 <body>
-
-<script type="text/javascript">
-function AlertIt(){
-	//亂數
-	var myrandom = Math.round(Math.random()*2)
-	//一些白痴的話，用矩陣 Array
-	var messages = new Array()
-	messages[0] = "大大安安，想怎樣？"
-	messages[1] = "今天天氣好，想怎樣？"
-	messages[2] = "無聊嗎？來看影片～"
-	//連結清單
-	var links = new Array()
-	links[0] = "http://www.google.com"
-	links[1] = "http://www.yahoo.com"
-	links[2] = "http://www.youtube.com"
-	links[3] = "http://www.ntut.edu.tw"
-	//呼叫確認視窗
-	var answer = confirm(messages[myrandom])
-	//重點來了，如果點「是」，就連去該變數所指的網站
-	if (answer){
-		window.location = links[myrandom]
-	} 
-}
-</script>
-
-<table width="100%" height ="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td align="center" valign="middle">
-		<p>Hello, world. - from JC ;) 揪瞇</p>
-		<a href="javascript:AlertIt();">
-			<img src="images/dAbHead.png" width="33%" height="auto">
-			<p>按我</p>
-		</a>
-	</td>
-  </tr>
-</table>
-
-
+    <img id="smallcloud" alt="#" class="cloud"  src="images/dio.png"height="330" width="330">
+    <div id="mainContent">
+    <img id="bigcloud" alt="#" class="cloud"  src="images/dio.png" height="480"width="480"></div>
 </body>
+ 
 </html>
