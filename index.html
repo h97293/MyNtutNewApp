@@ -4,52 +4,55 @@
 <head>
 <meta charset="utf-8">
 <title>dio</title>
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
-<script type="text/javascript" charset="utf-8">
 <script src="prefixfree.min.js"></script>
  
 <style>
+
+ 
 #mainContent {
     background-color: #FFFF77;
     border-radius: 4px;
     padding: 10px;
-    width: 600px;
-    height: 300px;
+    width: 1280px;
+    height: 1280px;
     overflow: hidden;
 }
 .cloud {
-    position: absolute;
+	position: absolute;
+	left: 12px;
+	top: 0px;
+	width: 1280px;
+	height: 600px;
 }
 #bigcloud {
     animation: bobble 2s infinite;
-    margin-left: -100px;
-    margin-top: -120px;
+    margin-left: 400px;
+    margin-top: 300px;
 }
 #smallcloud {
     animation: bobble 4s infinite;
-    margin-top: -70px;
-    margin-left: -30px;
+    margin-top: 300px;
+    margin-left: -800px;
 }
 @keyframes bobble {
     0% {
-        transform: translate3d(50px, 40px, 0px);
+        transform: translate3d(50px, 0px, 0px);
         animation-timing-function: ease-in;
     }
     50% {
-        transform: translate3d(50px, 50px, 20px);
+        transform: translate3d(20px, 500px, 1000px);
         animation-timing-function: ease-out;
     }
     100% {
-        transform: translate3d(50px, 40px, 100px);
+        transform: translate3d(50px, 0px, 2000px);
     }
 }
 </style>
 </head>
  
 <body>
-    <img id="smallcloud" alt="#" class="cloud"  src="images/dio.png"height="330" width="330">
-    <div id="mainContent">
-    <img id="bigcloud" alt="#" class="cloud"  src="images/dio.png" height="480"width="480"></div>
+<img  src="images/dio.png" alt="#" name="smallcloud" class="cloud" id="smallcloud">
+    <div id="mainContent"><img id="bigcloud" alt="#" class="cloud"  src="images/dio.png"></div>
 </body>
  
 </html>
