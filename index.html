@@ -8,13 +8,13 @@
  
 <style>
 
- 
+
 #mainContent {
     background-color: #FFFF77;
     border-radius: 4px;
     padding: 10px;
-    width: 1280px;
-    height: 700px;
+    width: 768px;
+    height: 1280px;
     overflow: hidden;
 }
 .cloud {
@@ -36,22 +36,25 @@
 }
 @keyframes bobble {
     0% {
-        transform: translate3d(50px, -300px, 0px);
+        transform: translate3d(50px, 0px, 0px);
         animation-timing-function: ease-in;
     }
     50% {
-        transform: translate3d(20px, -130px, 1000px);
+        transform: translate3d(20px, 300px, 1000px);
         animation-timing-function: ease-out;
     }
     100% {
-        transform: translate3d(50px, -300px, 2000px);
+        transform: translate3d(50px, 0px, 2000px);
     }
 }
+
+
+
 </style>
 </head>
  
 <body>
-<img  src="images/dio.png" alt="#" name="smallcloud" class="cloud" id="smallcloud">
+<img  src="images/dio2.png" alt="#" name="smallcloud" class="cloud" id="smallcloud">
     <div id="mainContent"><img id="bigcloud" alt="#" class="cloud"  src="images/dio.png"></div>
 </body>
  
